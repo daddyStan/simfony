@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="AppBundle\Entity\User" table="user">
+    <id name="userId" type="integer" column="user_id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="fio" type="text" column="fio" length="65535" nullable="false"/>
+    <field name="lastVisit" type="date" column="last_visit" nullable="false"/>
+    <field name="email" type="text" column="email" length="65535" nullable="false"/>
+    <field name="pass" type="text" column="pass" length="65535" nullable="false"/>
+    <field name="registrationDate" type="date" column="registration_date" nullable="false"/>
+    <field name="sessId" type="text" column="sess_id" length="65535" nullable="false"/>
+    <field name="sessEnd" type="date" column="sess_end" nullable="false"/>
+    <field name="admin" type="boolean" column="admin" nullable="false"/>
+  </entity>
+</doctrine-mapping>

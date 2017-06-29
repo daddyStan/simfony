@@ -1,0 +1,40 @@
+{% set child = _self %}
+{% extends "base.html.twig" %}
+{% block body %}
+
+
+    <!-- Page Content
+     ================================================== -->
+    <div class="row"><!--Container row-->
+
+        <div class="span8 contact"><!--Begin page content column-->
+
+            <h2>Мой блог {% if is_granted('ROLE_AUTHOR') %} (name) {% endif %}</h2>
+            {% if is_granted('ROLE_AUTHOR') %}
+                <a href="/logout">Выйти сук ******</a>
+            {% else %}
+                <div class="span8" style="margin: 50px 0px;">
+                    <h4>Авторизуйтесь</h4>
+                    <form action="/login" name="auth" method="post">
+                        <div class="input-prepend">
+                            <span class="add-on"><i class="icon-user"></i></span>
+                            <input class="span4" id="prependedInput" size="16" type="text" placeholder="Ваш логин" name="_username" required>
+                        </div>
+                        <div class="input-prepend">
+                            <span class="add-on"><i class="icon-question-sign"></i></span>
+                            <input class="span4" id="prependedInput" size="16" type="password" placeholder="Ваш пароль" name="_password" required>
+                        </div>
+                        <div class="row">
+                            <div class="span2">
+                                <input type="submit" class="btn btn-inverse" value="Send Message">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            {% endif %}
+        </div> <!--End page content column-->
+
+    </div><!-- End container row -->
+
+
+{% endblock %}

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="AppBundle\Entity\Comment" table="comment">
+    <id name="commentId" type="integer" column="comment_id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="text" type="text" column="text" length="65535" nullable="false"/>
+    <field name="author" type="integer" column="author" nullable="false"/>
+    <field name="date" type="date" column="date" nullable="false"/>
+    <field name="deleted" type="integer" column="deleted" nullable="false"/>
+  </entity>
+</doctrine-mapping>

@@ -1,0 +1,24 @@
+security:
+    # http://symfony.com/doc/current/security.html#b-configuring-how-users-are-loaded
+
+    providers:
+        in_memory:
+            memory:
+              users:
+                  stanley:
+                      password: 5555555
+                      roles: 'ROLE_AUTHOR'
+
+    encoders:
+        Symfony\Component\Security\Core\User\User: bcrypt
+
+    access_control:
+            - { path: ^/doctors, roles: ROLE_ADMIN}
+
+    firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+
+        main:
+            anonymous: ~
